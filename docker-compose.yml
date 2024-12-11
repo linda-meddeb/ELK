@@ -1,0 +1,52 @@
+version: '3'
+
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.7.0
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - ELASTIC_PASSWORD=changeme  # Mot de passe pour l'utilisateur 'elastic'
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - "9200:9200"  # Accessible sur le port 9200
+    volumes:
+      - esdata1:/usr/share/elasticsearch/data
+    networks:
+      - elk
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.7.0
+    container_name: kibana
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+      - ELASTICSEARCH_PASSWORD=changeme
+    ports:
+      - "5601:5601"  # Accessible sur le port 5601
+    depends_on:
+      - elasticsearch
+    networks:
+      - elk
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:8.7.0
+    container_name: logstash
+    environment:
+      - "LOGSTASH_PASSWORD=changeme"
+    ports:
+      - "5044:5044"  # Port d'entrée pour recevoir les logs
+    networks:
+      - elk
+    volumes:
+      - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf  # Configuration Logstash
+
+networks:
+  elk:
+    driver: bridge
+
+volumes:
+  esdata1:
+    driver: local
