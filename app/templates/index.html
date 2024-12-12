@@ -60,6 +60,33 @@
         button:hover {
             background-color: #005bb5;
         }
+        /* Popup styles */
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 8px;
+            z-index: 1000;
+            text-align: center;
+        }
+        #popup button {
+            margin-top: 10px;
+        }
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
     </style>
 </head>
 <body>
@@ -68,15 +95,64 @@
     </header>
     <main>
         <h2>Upload Logs</h2>
-        <form action="/upload" method="post" enctype="multipart/form-data">
+        <form id="uploadForm">
             <input type="file" name="logfile" />
             <button type="submit">Upload</button>
         </form>
         <h2>Search Logs</h2>
-        <form action="/search" method="get">
+        <form id="searchForm">
             <input type="text" name="query" placeholder="Enter your search query" />
             <button type="submit">Search</button>
         </form>
     </main>
+    <!-- Popup -->
+    <div id="overlay"></div>
+    <div id="popup">
+        <p id="popupMessage"></p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+    <script>
+        // Handle the upload form submission
+        document.getElementById("uploadForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            try {
+                const response = await fetch("/upload", {
+                    method: "POST",
+                    body: formData
+                });
+                const result = await response.json();
+                showPopup(result.message);
+            } catch (error) {
+                showPopup("An error occurred while uploading the file.");
+            }
+        });
+
+        // Handle the search form submission
+        document.getElementById("searchForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+            const query = new URLSearchParams(new FormData(event.target)).toString();
+            try {
+                const response = await fetch(`/search?${query}`);
+                const result = await response.json();
+                showPopup(result.message || "Search completed.");
+            } catch (error) {
+                showPopup("An error occurred while searching.");
+            }
+        });
+
+        // Show popup with a message
+        function showPopup(message) {
+            document.getElementById("popupMessage").innerText = message;
+            document.getElementById("popup").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+        }
+
+        // Close the popup
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
 </body>
 </html>

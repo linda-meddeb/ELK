@@ -1,0 +1,190 @@
+2024-12-12 18:56:52, TransactionID: 12345, Montant: 1131.49, Devise: TND, Utilisateur: user090, Type: Virement, Statut: Échoué
+2024-12-12 04:11:52, TransactionID: 12346, Montant: 3023.55, Devise: EUR, Utilisateur: user053, Type: Dépôt, Statut: Échoué
+2024-12-12 05:54:52, TransactionID: 12347, Montant: 3492.59, Devise: EUR, Utilisateur: user078, Type: Achat, Statut: Échoué
+2024-12-12 08:16:52, TransactionID: 12348, Montant: 3812.57, Devise: TND, Utilisateur: user083, Type: Dépôt, Statut: En attente
+2024-12-12 18:49:52, TransactionID: 12349, Montant: 4567.35, Devise: USD, Utilisateur: user029, Type: Dépôt, Statut: Réussi
+2024-12-12 06:04:52, TransactionID: 12350, Montant: 792.16, Devise: TND, Utilisateur: user044, Type: Achat, Statut: Échoué
+2024-12-12 15:29:52, TransactionID: 12351, Montant: 2204.46, Devise: USD, Utilisateur: user052, Type: Achat, Statut: Réussi
+2024-12-12 12:53:52, TransactionID: 12352, Montant: 1963.61, Devise: EUR, Utilisateur: user019, Type: Virement, Statut: Échoué
+2024-12-12 18:50:52, TransactionID: 12353, Montant: 1834.02, Devise: USD, Utilisateur: user009, Type: Achat, Statut: Échoué
+2024-12-12 03:00:52, TransactionID: 12354, Montant: 2501.75, Devise: USD, Utilisateur: user064, Type: Dépôt, Statut: En attente
+2024-12-12 06:39:52, TransactionID: 12355, Montant: 1985.35, Devise: TND, Utilisateur: user031, Type: Dépôt, Statut: En attente
+2024-12-12 17:37:52, TransactionID: 12356, Montant: 2955.27, Devise: TND, Utilisateur: user039, Type: Achat, Statut: Échoué
+2024-12-12 07:37:52, TransactionID: 12357, Montant: 2773.91, Devise: TND, Utilisateur: user031, Type: Dépôt, Statut: Échoué
+2024-12-12 09:36:52, TransactionID: 12358, Montant: 2833.95, Devise: TND, Utilisateur: user056, Type: Retrait, Statut: Réussi
+2024-12-12 12:01:52, TransactionID: 12359, Montant: 1709.43, Devise: GBP, Utilisateur: user073, Type: Achat, Statut: Échoué
+2024-12-12 08:39:52, TransactionID: 12360, Montant: 88.38, Devise: TND, Utilisateur: user099, Type: Achat, Statut: Réussi
+2024-12-12 05:40:52, TransactionID: 12361, Montant: 609.2, Devise: GBP, Utilisateur: user089, Type: Virement, Statut: En attente
+2024-12-12 17:24:52, TransactionID: 12362, Montant: 699.29, Devise: EUR, Utilisateur: user040, Type: Retrait, Statut: Réussi
+2024-12-12 04:16:52, TransactionID: 12363, Montant: 4089.24, Devise: GBP, Utilisateur: user097, Type: Retrait, Statut: En attente
+2024-12-12 05:48:52, TransactionID: 12364, Montant: 1684.32, Devise: EUR, Utilisateur: user098, Type: Retrait, Statut: Échoué
+2024-12-12 15:11:52, TransactionID: 12365, Montant: 4250.97, Devise: GBP, Utilisateur: user098, Type: Retrait, Statut: En attente
+2024-12-12 12:54:52, TransactionID: 12366, Montant: 441.38, Devise: USD, Utilisateur: user003, Type: Retrait, Statut: Échoué
+2024-12-12 17:44:52, TransactionID: 12367, Montant: 4636.05, Devise: GBP, Utilisateur: user001, Type: Virement, Statut: Échoué
+2024-12-12 12:27:52, TransactionID: 12368, Montant: 4161.64, Devise: GBP, Utilisateur: user033, Type: Retrait, Statut: Échoué
+2024-12-12 10:48:52, TransactionID: 12369, Montant: 3259.25, Devise: GBP, Utilisateur: user087, Type: Achat, Statut: En attente
+2024-12-12 13:40:52, TransactionID: 12370, Montant: 682.52, Devise: USD, Utilisateur: user009, Type: Retrait, Statut: Réussi
+2024-12-12 05:45:52, TransactionID: 12371, Montant: 4273.99, Devise: TND, Utilisateur: user017, Type: Dépôt, Statut: En attente
+2024-12-12 18:26:52, TransactionID: 12372, Montant: 3950.29, Devise: GBP, Utilisateur: user005, Type: Virement, Statut: Échoué
+2024-12-12 07:46:52, TransactionID: 12373, Montant: 3965.44, Devise: EUR, Utilisateur: user014, Type: Virement, Statut: En attente
+2024-12-12 08:33:52, TransactionID: 12374, Montant: 3752.05, Devise: USD, Utilisateur: user064, Type: Retrait, Statut: Réussi
+2024-12-12 18:00:52, TransactionID: 12375, Montant: 2667.23, Devise: GBP, Utilisateur: user035, Type: Dépôt, Statut: Échoué
+2024-12-12 02:53:52, TransactionID: 12376, Montant: 2922.28, Devise: USD, Utilisateur: user046, Type: Dépôt, Statut: Échoué
+2024-12-12 05:54:52, TransactionID: 12377, Montant: 3575.23, Devise: EUR, Utilisateur: user053, Type: Virement, Statut: Échoué
+2024-12-12 09:27:52, TransactionID: 12378, Montant: 1960.0, Devise: USD, Utilisateur: user016, Type: Achat, Statut: En attente
+2024-12-12 13:36:52, TransactionID: 12379, Montant: 647.92, Devise: TND, Utilisateur: user014, Type: Virement, Statut: Réussi
+2024-12-12 06:51:52, TransactionID: 12380, Montant: 1186.89, Devise: TND, Utilisateur: user076, Type: Achat, Statut: Réussi
+2024-12-12 13:07:52, TransactionID: 12381, Montant: 2202.4, Devise: GBP, Utilisateur: user024, Type: Dépôt, Statut: Réussi
+2024-12-12 07:04:52, TransactionID: 12382, Montant: 1426.35, Devise: EUR, Utilisateur: user089, Type: Virement, Statut: Échoué
+2024-12-12 12:43:52, TransactionID: 12383, Montant: 4330.11, Devise: EUR, Utilisateur: user053, Type: Retrait, Statut: Réussi
+2024-12-12 06:17:52, TransactionID: 12384, Montant: 3840.4, Devise: USD, Utilisateur: user029, Type: Dépôt, Statut: Réussi
+2024-12-12 15:53:52, TransactionID: 12385, Montant: 3498.53, Devise: USD, Utilisateur: user017, Type: Achat, Statut: En attente
+2024-12-12 13:07:52, TransactionID: 12386, Montant: 4277.95, Devise: GBP, Utilisateur: user029, Type: Retrait, Statut: Échoué
+2024-12-12 07:32:52, TransactionID: 12387, Montant: 4172.18, Devise: EUR, Utilisateur: user019, Type: Achat, Statut: Échoué
+2024-12-12 10:44:52, TransactionID: 12388, Montant: 4991.41, Devise: GBP, Utilisateur: user015, Type: Retrait, Statut: En attente
+2024-12-12 08:49:52, TransactionID: 12389, Montant: 2935.0, Devise: TND, Utilisateur: user001, Type: Achat, Statut: Réussi
+2024-12-12 05:16:52, TransactionID: 12390, Montant: 2816.0, Devise: GBP, Utilisateur: user058, Type: Dépôt, Statut: En attente
+2024-12-12 05:21:52, TransactionID: 12391, Montant: 569.94, Devise: USD, Utilisateur: user031, Type: Achat, Statut: Réussi
+2024-12-12 08:15:52, TransactionID: 12392, Montant: 3474.87, Devise: EUR, Utilisateur: user094, Type: Virement, Statut: En attente
+2024-12-12 15:03:52, TransactionID: 12393, Montant: 2879.8, Devise: USD, Utilisateur: user062, Type: Dépôt, Statut: Échoué
+2024-12-12 06:18:52, TransactionID: 12394, Montant: 906.67, Devise: GBP, Utilisateur: user010, Type: Virement, Statut: Échoué
+2024-12-12 04:07:52, TransactionID: 12395, Montant: 1377.44, Devise: USD, Utilisateur: user004, Type: Achat, Statut: Échoué
+2024-12-12 02:45:52, TransactionID: 12396, Montant: 1168.38, Devise: TND, Utilisateur: user064, Type: Achat, Statut: Échoué
+2024-12-12 03:20:52, TransactionID: 12397, Montant: 2194.86, Devise: TND, Utilisateur: user017, Type: Virement, Statut: Échoué
+2024-12-12 17:48:52, TransactionID: 12398, Montant: 3530.94, Devise: TND, Utilisateur: user039, Type: Achat, Statut: Réussi
+2024-12-12 03:01:52, TransactionID: 12399, Montant: 3544.81, Devise: USD, Utilisateur: user033, Type: Achat, Statut: Échoué
+2024-12-12 03:07:52, TransactionID: 12400, Montant: 2412.14, Devise: EUR, Utilisateur: user023, Type: Dépôt, Statut: En attente
+2024-12-12 05:34:52, TransactionID: 12401, Montant: 1848.57, Devise: EUR, Utilisateur: user033, Type: Dépôt, Statut: En attente
+2024-12-12 12:13:52, TransactionID: 12402, Montant: 1429.84, Devise: TND, Utilisateur: user072, Type: Achat, Statut: Échoué
+2024-12-12 04:33:52, TransactionID: 12403, Montant: 668.89, Devise: USD, Utilisateur: user002, Type: Retrait, Statut: Échoué
+2024-12-12 11:50:52, TransactionID: 12404, Montant: 3214.73, Devise: TND, Utilisateur: user013, Type: Virement, Statut: En attente
+2024-12-12 10:02:52, TransactionID: 12405, Montant: 1573.92, Devise: TND, Utilisateur: user088, Type: Achat, Statut: En attente
+2024-12-12 12:21:52, TransactionID: 12406, Montant: 1038.37, Devise: USD, Utilisateur: user023, Type: Achat, Statut: Échoué
+2024-12-12 17:33:52, TransactionID: 12407, Montant: 1394.04, Devise: GBP, Utilisateur: user094, Type: Dépôt, Statut: Échoué
+2024-12-12 06:04:52, TransactionID: 12408, Montant: 4958.07, Devise: USD, Utilisateur: user020, Type: Dépôt, Statut: Réussi
+2024-12-12 06:55:52, TransactionID: 12409, Montant: 4562.15, Devise: EUR, Utilisateur: user076, Type: Achat, Statut: En attente
+2024-12-12 12:43:52, TransactionID: 12410, Montant: 42.06, Devise: EUR, Utilisateur: user091, Type: Achat, Statut: En attente
+2024-12-12 15:12:52, TransactionID: 12411, Montant: 30.75, Devise: TND, Utilisateur: user026, Type: Virement, Statut: Échoué
+2024-12-12 17:51:52, TransactionID: 12412, Montant: 1122.3, Devise: GBP, Utilisateur: user092, Type: Dépôt, Statut: Réussi
+2024-12-12 03:58:52, TransactionID: 12413, Montant: 913.59, Devise: USD, Utilisateur: user045, Type: Achat, Statut: Réussi
+2024-12-12 03:05:52, TransactionID: 12414, Montant: 158.93, Devise: TND, Utilisateur: user087, Type: Dépôt, Statut: En attente
+2024-12-12 11:31:52, TransactionID: 12415, Montant: 2272.96, Devise: USD, Utilisateur: user022, Type: Retrait, Statut: Échoué
+2024-12-12 16:32:52, TransactionID: 12416, Montant: 2344.33, Devise: USD, Utilisateur: user017, Type: Retrait, Statut: Échoué
+2024-12-12 08:23:52, TransactionID: 12417, Montant: 2887.5, Devise: USD, Utilisateur: user091, Type: Dépôt, Statut: Échoué
+2024-12-12 18:27:52, TransactionID: 12418, Montant: 3389.33, Devise: GBP, Utilisateur: user067, Type: Retrait, Statut: En attente
+2024-12-12 08:38:52, TransactionID: 12419, Montant: 3270.67, Devise: USD, Utilisateur: user085, Type: Achat, Statut: En attente
+2024-12-12 18:15:52, TransactionID: 12420, Montant: 3839.03, Devise: USD, Utilisateur: user046, Type: Dépôt, Statut: Échoué
+2024-12-12 02:56:52, TransactionID: 12421, Montant: 1124.37, Devise: TND, Utilisateur: user088, Type: Virement, Statut: Échoué
+2024-12-12 18:41:52, TransactionID: 12422, Montant: 2490.5, Devise: GBP, Utilisateur: user068, Type: Achat, Statut: En attente
+2024-12-12 15:46:52, TransactionID: 12423, Montant: 1150.02, Devise: GBP, Utilisateur: user098, Type: Dépôt, Statut: En attente
+2024-12-12 12:58:52, TransactionID: 12424, Montant: 2999.56, Devise: GBP, Utilisateur: user055, Type: Achat, Statut: Réussi
+2024-12-12 17:19:52, TransactionID: 12425, Montant: 2307.95, Devise: GBP, Utilisateur: user084, Type: Virement, Statut: Échoué
+2024-12-12 08:15:52, TransactionID: 12426, Montant: 3440.93, Devise: EUR, Utilisateur: user090, Type: Retrait, Statut: Réussi
+2024-12-12 06:14:52, TransactionID: 12427, Montant: 3552.76, Devise: EUR, Utilisateur: user016, Type: Virement, Statut: Échoué
+2024-12-12 10:56:52, TransactionID: 12428, Montant: 475.98, Devise: GBP, Utilisateur: user020, Type: Dépôt, Statut: En attente
+2024-12-12 06:16:52, TransactionID: 12429, Montant: 3001.44, Devise: EUR, Utilisateur: user034, Type: Dépôt, Statut: En attente
+2024-12-12 13:22:52, TransactionID: 12430, Montant: 3306.61, Devise: GBP, Utilisateur: user088, Type: Retrait, Statut: Réussi
+2024-12-12 08:53:52, TransactionID: 12431, Montant: 3722.23, Devise: USD, Utilisateur: user061, Type: Virement, Statut: Échoué
+2024-12-12 09:00:52, TransactionID: 12432, Montant: 3880.38, Devise: EUR, Utilisateur: user086, Type: Achat, Statut: Échoué
+2024-12-12 07:02:52, TransactionID: 12433, Montant: 3110.2, Devise: USD, Utilisateur: user085, Type: Retrait, Statut: Réussi
+2024-12-12 16:28:52, TransactionID: 12434, Montant: 2762.18, Devise: TND, Utilisateur: user084, Type: Dépôt, Statut: En attente
+2024-12-12 18:14:52, TransactionID: 12435, Montant: 3579.09, Devise: GBP, Utilisateur: user015, Type: Dépôt, Statut: Échoué
+2024-12-12 08:53:52, TransactionID: 12436, Montant: 2129.21, Devise: GBP, Utilisateur: user086, Type: Achat, Statut: Réussi
+2024-12-12 08:58:52, TransactionID: 12437, Montant: 4640.59, Devise: TND, Utilisateur: user073, Type: Retrait, Statut: En attente
+2024-12-12 15:32:52, TransactionID: 12438, Montant: 2545.93, Devise: EUR, Utilisateur: user092, Type: Virement, Statut: En attente
+2024-12-12 09:34:52, TransactionID: 12439, Montant: 2153.49, Devise: EUR, Utilisateur: user038, Type: Achat, Statut: Échoué
+2024-12-12 06:49:52, TransactionID: 12440, Montant: 2909.44, Devise: USD, Utilisateur: user013, Type: Dépôt, Statut: En attente
+2024-12-12 15:12:52, TransactionID: 12441, Montant: 4102.68, Devise: EUR, Utilisateur: user022, Type: Virement, Statut: En attente
+2024-12-12 07:55:52, TransactionID: 12442, Montant: 1529.62, Devise: EUR, Utilisateur: user059, Type: Retrait, Statut: Échoué
+2024-12-12 06:23:52, TransactionID: 12443, Montant: 1871.85, Devise: GBP, Utilisateur: user012, Type: Virement, Statut: Réussi
+2024-12-12 17:13:52, TransactionID: 12444, Montant: 2251.41, Devise: EUR, Utilisateur: user001, Type: Virement, Statut: Échoué
+2024-12-12 16:10:52, TransactionID: 12445, Montant: 1447.36, Devise: USD, Utilisateur: user044, Type: Achat, Statut: Échoué
+2024-12-12 11:23:52, TransactionID: 12446, Montant: 3961.55, Devise: GBP, Utilisateur: user080, Type: Virement, Statut: Échoué
+2024-12-12 09:58:52, TransactionID: 12447, Montant: 701.66, Devise: USD, Utilisateur: user057, Type: Achat, Statut: Réussi
+2024-12-12 03:41:52, TransactionID: 12448, Montant: 4162.69, Devise: USD, Utilisateur: user013, Type: Achat, Statut: En attente
+2024-12-12 15:13:52, TransactionID: 12449, Montant: 526.17, Devise: USD, Utilisateur: user081, Type: Achat, Statut: Échoué
+2024-12-12 18:43:52, TransactionID: 12450, Montant: 2781.68, Devise: GBP, Utilisateur: user086, Type: Dépôt, Statut: Réussi
+2024-12-12 10:46:52, TransactionID: 12451, Montant: 1861.98, Devise: USD, Utilisateur: user077, Type: Achat, Statut: Réussi
+2024-12-12 15:45:52, TransactionID: 12452, Montant: 4696.23, Devise: GBP, Utilisateur: user043, Type: Retrait, Statut: Réussi
+2024-12-12 17:23:52, TransactionID: 12453, Montant: 716.15, Devise: TND, Utilisateur: user010, Type: Retrait, Statut: Réussi
+2024-12-12 15:05:52, TransactionID: 12454, Montant: 4479.09, Devise: USD, Utilisateur: user052, Type: Dépôt, Statut: Échoué
+2024-12-12 18:51:52, TransactionID: 12455, Montant: 4119.76, Devise: EUR, Utilisateur: user040, Type: Retrait, Statut: En attente
+2024-12-12 09:32:52, TransactionID: 12456, Montant: 843.3, Devise: GBP, Utilisateur: user035, Type: Virement, Statut: Réussi
+2024-12-12 17:21:52, TransactionID: 12457, Montant: 3594.95, Devise: GBP, Utilisateur: user063, Type: Retrait, Statut: En attente
+2024-12-12 07:02:52, TransactionID: 12458, Montant: 1227.52, Devise: TND, Utilisateur: user018, Type: Retrait, Statut: Réussi
+2024-12-12 03:24:52, TransactionID: 12459, Montant: 3703.12, Devise: GBP, Utilisateur: user079, Type: Retrait, Statut: Échoué
+2024-12-12 06:47:52, TransactionID: 12460, Montant: 836.66, Devise: USD, Utilisateur: user012, Type: Virement, Statut: Échoué
+2024-12-12 06:46:52, TransactionID: 12461, Montant: 848.76, Devise: TND, Utilisateur: user022, Type: Achat, Statut: Réussi
+2024-12-12 17:23:52, TransactionID: 12462, Montant: 2765.28, Devise: USD, Utilisateur: user084, Type: Retrait, Statut: Réussi
+2024-12-12 08:47:52, TransactionID: 12463, Montant: 2273.47, Devise: EUR, Utilisateur: user017, Type: Achat, Statut: En attente
+2024-12-12 02:39:52, TransactionID: 12464, Montant: 4328.7, Devise: USD, Utilisateur: user015, Type: Achat, Statut: Réussi
+2024-12-12 13:11:52, TransactionID: 12465, Montant: 1008.46, Devise: EUR, Utilisateur: user070, Type: Achat, Statut: Échoué
+2024-12-12 17:09:52, TransactionID: 12466, Montant: 478.26, Devise: EUR, Utilisateur: user081, Type: Achat, Statut: En attente
+2024-12-12 14:59:52, TransactionID: 12467, Montant: 4804.07, Devise: EUR, Utilisateur: user036, Type: Virement, Statut: Échoué
+2024-12-12 13:26:52, TransactionID: 12468, Montant: 4757.56, Devise: EUR, Utilisateur: user031, Type: Retrait, Statut: Échoué
+2024-12-12 03:16:52, TransactionID: 12469, Montant: 4681.79, Devise: TND, Utilisateur: user080, Type: Achat, Statut: En attente
+2024-12-12 09:49:52, TransactionID: 12470, Montant: 1405.6, Devise: TND, Utilisateur: user100, Type: Dépôt, Statut: Réussi
+2024-12-12 06:32:52, TransactionID: 12471, Montant: 612.12, Devise: EUR, Utilisateur: user040, Type: Virement, Statut: En attente
+2024-12-12 15:33:52, TransactionID: 12472, Montant: 2152.78, Devise: USD, Utilisateur: user017, Type: Dépôt, Statut: En attente
+2024-12-12 05:51:52, TransactionID: 12473, Montant: 4536.23, Devise: GBP, Utilisateur: user070, Type: Retrait, Statut: En attente
+2024-12-12 03:28:52, TransactionID: 12474, Montant: 4007.81, Devise: EUR, Utilisateur: user007, Type: Achat, Statut: Réussi
+2024-12-12 04:34:52, TransactionID: 12475, Montant: 4877.42, Devise: USD, Utilisateur: user010, Type: Achat, Statut: En attente
+2024-12-12 06:11:52, TransactionID: 12476, Montant: 4443.51, Devise: EUR, Utilisateur: user072, Type: Achat, Statut: Réussi
+2024-12-12 15:07:52, TransactionID: 12477, Montant: 3655.46, Devise: EUR, Utilisateur: user070, Type: Virement, Statut: Échoué
+2024-12-12 14:21:52, TransactionID: 12478, Montant: 2653.05, Devise: GBP, Utilisateur: user035, Type: Virement, Statut: Échoué
+2024-12-12 06:35:52, TransactionID: 12479, Montant: 1974.65, Devise: TND, Utilisateur: user088, Type: Retrait, Statut: Échoué
+2024-12-12 10:52:52, TransactionID: 12480, Montant: 4404.21, Devise: GBP, Utilisateur: user052, Type: Retrait, Statut: Échoué
+2024-12-12 06:22:52, TransactionID: 12481, Montant: 295.44, Devise: EUR, Utilisateur: user061, Type: Virement, Statut: Échoué
+2024-12-12 14:36:52, TransactionID: 12482, Montant: 4652.28, Devise: TND, Utilisateur: user042, Type: Virement, Statut: Réussi
+2024-12-12 02:37:52, TransactionID: 12483, Montant: 4557.85, Devise: USD, Utilisateur: user092, Type: Virement, Statut: Échoué
+2024-12-12 15:15:52, TransactionID: 12484, Montant: 2367.49, Devise: TND, Utilisateur: user090, Type: Virement, Statut: En attente
+2024-12-12 04:54:52, TransactionID: 12485, Montant: 4077.33, Devise: TND, Utilisateur: user037, Type: Virement, Statut: Échoué
+2024-12-12 04:01:52, TransactionID: 12486, Montant: 3608.5, Devise: USD, Utilisateur: user071, Type: Achat, Statut: En attente
+2024-12-12 08:41:52, TransactionID: 12487, Montant: 4366.66, Devise: USD, Utilisateur: user005, Type: Virement, Statut: En attente
+2024-12-12 10:39:52, TransactionID: 12488, Montant: 1218.7, Devise: TND, Utilisateur: user074, Type: Dépôt, Statut: Réussi
+2024-12-12 06:56:52, TransactionID: 12489, Montant: 615.48, Devise: TND, Utilisateur: user040, Type: Retrait, Statut: Réussi
+2024-12-12 14:58:52, TransactionID: 12490, Montant: 3554.9, Devise: USD, Utilisateur: user008, Type: Retrait, Statut: Réussi
+2024-12-12 03:34:52, TransactionID: 12491, Montant: 662.88, Devise: TND, Utilisateur: user082, Type: Dépôt, Statut: Réussi
+2024-12-12 10:24:52, TransactionID: 12492, Montant: 1914.36, Devise: GBP, Utilisateur: user038, Type: Achat, Statut: Échoué
+2024-12-12 10:54:52, TransactionID: 12493, Montant: 4280.35, Devise: EUR, Utilisateur: user008, Type: Dépôt, Statut: Réussi
+2024-12-12 09:36:52, TransactionID: 12494, Montant: 2182.08, Devise: TND, Utilisateur: user002, Type: Dépôt, Statut: Réussi
+2024-12-12 10:06:52, TransactionID: 12495, Montant: 4909.94, Devise: TND, Utilisateur: user016, Type: Dépôt, Statut: En attente
+2024-12-12 02:42:52, TransactionID: 12496, Montant: 933.23, Devise: EUR, Utilisateur: user048, Type: Virement, Statut: En attente
+2024-12-12 09:50:52, TransactionID: 12497, Montant: 4943.84, Devise: TND, Utilisateur: user043, Type: Dépôt, Statut: Réussi
+2024-12-12 06:35:52, TransactionID: 12498, Montant: 4356.27, Devise: GBP, Utilisateur: user046, Type: Dépôt, Statut: Réussi
+2024-12-12 07:11:52, TransactionID: 12499, Montant: 1708.84, Devise: GBP, Utilisateur: user080, Type: Achat, Statut: Échoué
+2024-12-12 09:09:52, TransactionID: 12500, Montant: 2857.61, Devise: TND, Utilisateur: user075, Type: Retrait, Statut: En attente
+2024-12-12 02:52:52, TransactionID: 12501, Montant: 691.27, Devise: EUR, Utilisateur: user003, Type: Dépôt, Statut: Échoué
+2024-12-12 03:58:52, TransactionID: 12502, Montant: 4467.63, Devise: EUR, Utilisateur: user074, Type: Retrait, Statut: Échoué
+2024-12-12 05:07:52, TransactionID: 12503, Montant: 3873.81, Devise: GBP, Utilisateur: user047, Type: Retrait, Statut: Réussi
+2024-12-12 10:41:52, TransactionID: 12504, Montant: 1973.2, Devise: GBP, Utilisateur: user054, Type: Virement, Statut: Échoué
+2024-12-12 13:22:52, TransactionID: 12505, Montant: 690.94, Devise: GBP, Utilisateur: user012, Type: Dépôt, Statut: Réussi
+2024-12-12 02:32:52, TransactionID: 12506, Montant: 3541.57, Devise: USD, Utilisateur: user080, Type: Retrait, Statut: Réussi
+2024-12-12 07:45:52, TransactionID: 12507, Montant: 1679.4, Devise: EUR, Utilisateur: user084, Type: Achat, Statut: En attente
+2024-12-12 05:34:52, TransactionID: 12508, Montant: 239.69, Devise: USD, Utilisateur: user033, Type: Achat, Statut: Réussi
+2024-12-12 09:02:52, TransactionID: 12509, Montant: 4669.77, Devise: TND, Utilisateur: user004, Type: Dépôt, Statut: Réussi
+2024-12-12 09:26:52, TransactionID: 12510, Montant: 3659.04, Devise: USD, Utilisateur: user038, Type: Virement, Statut: En attente
+2024-12-12 03:34:52, TransactionID: 12511, Montant: 3519.63, Devise: EUR, Utilisateur: user092, Type: Dépôt, Statut: Échoué
+2024-12-12 12:27:52, TransactionID: 12512, Montant: 3762.5, Devise: GBP, Utilisateur: user006, Type: Retrait, Statut: Réussi
+2024-12-12 15:11:52, TransactionID: 12513, Montant: 2165.81, Devise: USD, Utilisateur: user022, Type: Achat, Statut: Échoué
+2024-12-12 04:30:52, TransactionID: 12514, Montant: 560.72, Devise: USD, Utilisateur: user072, Type: Retrait, Statut: Réussi
+2024-12-12 15:50:52, TransactionID: 12515, Montant: 923.48, Devise: EUR, Utilisateur: user061, Type: Dépôt, Statut: Réussi
+2024-12-12 11:20:52, TransactionID: 12516, Montant: 3857.48, Devise: USD, Utilisateur: user075, Type: Dépôt, Statut: Échoué
+2024-12-12 08:56:52, TransactionID: 12517, Montant: 2117.24, Devise: EUR, Utilisateur: user037, Type: Retrait, Statut: Réussi
+2024-12-12 14:34:52, TransactionID: 12518, Montant: 61.1, Devise: EUR, Utilisateur: user052, Type: Retrait, Statut: En attente
+2024-12-12 03:20:52, TransactionID: 12519, Montant: 3278.91, Devise: EUR, Utilisateur: user081, Type: Virement, Statut: En attente
+2024-12-12 16:43:52, TransactionID: 12520, Montant: 1574.08, Devise: USD, Utilisateur: user028, Type: Achat, Statut: En attente
+2024-12-12 05:06:52, TransactionID: 12521, Montant: 4997.71, Devise: EUR, Utilisateur: user056, Type: Achat, Statut: Échoué
+2024-12-12 03:58:52, TransactionID: 12522, Montant: 3613.78, Devise: TND, Utilisateur: user077, Type: Achat, Statut: Réussi
+2024-12-12 17:57:52, TransactionID: 12523, Montant: 1668.44, Devise: EUR, Utilisateur: user075, Type: Achat, Statut: Échoué
+2024-12-12 16:16:52, TransactionID: 12524, Montant: 1591.55, Devise: USD, Utilisateur: user061, Type: Dépôt, Statut: En attente
+2024-12-12 11:36:52, TransactionID: 12525, Montant: 3789.54, Devise: TND, Utilisateur: user098, Type: Retrait, Statut: Échoué
+2024-12-12 19:07:52, TransactionID: 12526, Montant: 1945.39, Devise: GBP, Utilisateur: user065, Type: Achat, Statut: Échoué
+2024-12-12 02:57:52, TransactionID: 12527, Montant: 1380.69, Devise: GBP, Utilisateur: user033, Type: Achat, Statut: Réussi
+2024-12-12 17:50:52, TransactionID: 12528, Montant: 3307.61, Devise: TND, Utilisateur: user067, Type: Virement, Statut: En attente
+2024-12-12 16:14:52, TransactionID: 12529, Montant: 4548.81, Devise: USD, Utilisateur: user008, Type: Achat, Statut: En attente
+2024-12-12 02:53:52, TransactionID: 12530, Montant: 3030.69, Devise: TND, Utilisateur: user047, Type: Retrait, Statut: Réussi
+2024-12-12 09:50:52, TransactionID: 12531, Montant: 502.69, Devise: GBP, Utilisateur: user023, Type: Dépôt, Statut: Échoué
+2024-12-12 13:11:52, TransactionID: 12532, Montant: 1524.69, Devise: USD, Utilisateur: user099, Type: Retrait, Statut: Réussi
+2024-12-12 02:44:52, TransactionID: 12533, Montant: 2402.81, Devise: EUR, Utilisateur: user001, Type: Retrait, Statut: En attente
+2024-12-12 13:32:52, TransactionID: 12534, Montant: 402.49, Devise: GBP, Utilisateur: user036, Type: Achat, Statut: Échoué
