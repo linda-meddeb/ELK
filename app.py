@@ -1,46 +1,36 @@
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory
+from flask import Flask, render_template, request, jsonify
 import os
+from elasticsearch import Elasticsearch
 
-app = Flask(__name__)
+app = Flask(__name__,template_folder='app/templates')
+UPLOAD_FOLDER = 'uploads'
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-# Définir le répertoire pour stocker les fichiers de logs
-UPLOAD_FOLDER = 'logs'
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+# Configuration Elasticsearch
+es = Elasticsearch("http://elasticsearch:9200")
 
-# Assurez-vous que le répertoire des logs existe
-if not os.path.exists(UPLOAD_FOLDER):
-    os.makedirs(UPLOAD_FOLDER)
-
-# Route principale pour afficher l'upload des fichiers et la liste des logs
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def index():
-    if request.method == 'POST':
-        # Récupérer le fichier téléchargé
-        file = request.files['file']
-        if file:
-            # Sauvegarder le fichier dans le répertoire 'logs'
-            filename = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
-            file.save(filename)
-            return redirect(url_for('index'))  # Rediriger vers la page principale après le téléchargement
+    return render_template('index.html')
 
-    # Lister tous les fichiers dans le répertoire des logs
-    log_files = os.listdir(app.config['UPLOAD_FOLDER'])
-    return render_template('index.html', log_files=log_files)
+@app.route('/upload', methods=['POST'])
+def upload_file():
+    if 'logfile' not in request.files:
+        return "No file uploaded", 400
+    
+    file = request.files['logfile']
+    if file.filename == '':
+        return "No selected file", 400
+    
+    filepath = os.path.join(UPLOAD_FOLDER, file.filename)
+    file.save(filepath)
+    return jsonify({"message": "File uploaded successfully", "filename": file.filename})
 
-# Route pour afficher le contenu d'un fichier log
-@app.route('/view_log/<filename>')
-def view_log(filename):
-    filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-    if os.path.exists(filepath):
-        with open(filepath, 'r') as file:
-            content = file.read()
-        return render_template('view_log.html', filename=filename, content=content)
-    return "Le fichier n'existe pas!", 404
+@app.route('/search', methods=['GET'])
+def search_logs():
+    query = request.args.get('query', '')
+    results = es.search(index="logs", query={"match": {"message": query}})
+    return jsonify(results["hits"]["hits"])
 
-# Route pour télécharger un fichier log
-@app.route('/download/<filename>')
-def download_file(filename):
-    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
-
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
