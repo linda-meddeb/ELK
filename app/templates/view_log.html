@@ -3,11 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voir le Log - {{ filename }}</title>
+    <title>Index Search Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        main {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        #indexName {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <h1>Contenu du fichier log: {{ filename }}</h1>
-    <pre>{{ content }}</pre>
-    <a href="{{ url_for('index') }}">Retour à l'index</a>
+    <header>
+        <h1>Index Content</h1>
+    </header>
+    <main>
+        <p>Index: <span id="indexName"></span></p>
+        <table>
+            <thead>
+                <tr id="tableHeaders">
+                    <!-- Dynamic headers will be added here -->
+                </tr>
+            </thead>
+            <tbody id="logResults">
+                <!-- Dynamic log results will be added here -->
+            </tbody>
+        </table>
+    </main>
+    <script>
+        async function fetchLogs() {
+            const params = new URLSearchParams(window.location.search);
+            const indexName = params.get('index');
+            document.getElementById("indexName").textContent = indexName;
+
+            try {
+                const response = await fetch(`/search_index?index=${indexName}`);
+                const data = await response.json();
+
+                if (data.hits.length === 0) {
+                    alert("No data found for the specified index.");
+                    return;
+                }
+
+                const firstDoc = data.hits[0]._source;
+                const tableHeaders = document.getElementById("tableHeaders");
+                const tableBody = document.getElementById("logResults");
+
+                // Clear existing headers and rows
+                tableHeaders.innerHTML = "";
+                tableBody.innerHTML = "";
+
+                // Dynamically generate headers
+                Object.keys(firstDoc).forEach(key => {
+                    const th = document.createElement("th");
+                    th.textContent = key;
+                    tableHeaders.appendChild(th);
+                });
+
+                // Populate table rows dynamically
+                data.hits.forEach(hit => {
+                    const log = hit._source;
+                    const row = document.createElement("tr");
+                    Object.keys(firstDoc).forEach(key => {
+                        const cell = document.createElement("td");
+                        cell.textContent = log[key] || "-";
+                        row.appendChild(cell);
+                    });
+                    tableBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error("Error fetching logs:", error);
+            }
+        }
+
+        // Fetch logs on page load
+        fetchLogs();
+    </script>
 </body>
 </html>

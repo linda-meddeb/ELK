@@ -100,10 +100,16 @@
             <button type="submit">Upload</button>
         </form>
         <h2>Search Logs</h2>
-        <form id="searchForm">
-            <input type="text" name="query" placeholder="Enter your search query" />
+        <form id="searchForm" action="/view_log.html" method="get">
+            <input type="text" name="index" placeholder="Enter your search table" />
             <button type="submit">Search</button>
-        </form>
+        </form> 
+        <h2>View Logs in Kibana</h2>
+        <button onclick="openKibana()">Open Kibana Dashboard</button>
+        <div id="kibanaIframe">
+            <iframe src="http://localhost:5601/app/discover" 
+                    style="width: 100%; height: 90vh; border: none;"></iframe>
+        </div>       
     </main>
     <!-- Popup -->
     <div id="overlay"></div>
@@ -152,6 +158,10 @@
         function closePopup() {
             document.getElementById("popup").style.display = "none";
             document.getElementById("overlay").style.display = "none";
+        }
+        // Function to show Kibana iframe
+        function openKibana() {
+            document.getElementById("kibanaIframe").style.display = "block";
         }
     </script>
 </body>
