@@ -98,6 +98,15 @@
             background-color: rgba(0, 0, 0, 0.5);
             z-index: 999;
         }
+        #kibanaContainer {
+            display: none;
+            margin-top: 30px;
+        }
+        iframe {
+            width: 100%;
+            height: 90vh;
+            border: none;
+        }
     </style>
 </head>
 <body>
@@ -125,12 +134,18 @@
             <thead id="tableHeaders"></thead>
             <tbody id="tableBody"></tbody>
         </table>
+
+        <!-- Kibana iframe section (hidden initially) -->
+        <div id="kibanaContainer">
+            <iframe src="http://localhost:5601/app/discover"></iframe>
+        </div>
     </main>
     <div id="overlay"></div>
     <div id="popup">
         <p id="popupMessage"></p>
         <button onclick="closePopup()">Close</button>
     </div>
+
     <script>
         // Handle the upload form submission
         document.getElementById("uploadForm").addEventListener("submit", async function(event) {
@@ -210,66 +225,75 @@
             document.getElementById("popup").style.display = "none";
             document.getElementById("overlay").style.display = "none";
         }
-        
 
-        
+        // Fetch indices and display the Kibana iframe
         document.addEventListener("DOMContentLoaded", async () => {
-        const indexInput = document.getElementById("indexInput");
-        const autocompleteList = document.getElementById("autocompleteList");
-        let indices = [];
+            const indexInput = document.getElementById("indexInput");
+            const autocompleteList = document.getElementById("autocompleteList");
+            let indices = [];
+            try {
+                const response = await fetch("/list_indices");
+                const data = await response.json();
+                indices = data.indices || [];
+                
+                if (indices.length > 0) {
+                    // Show Kibana iframe if indices are found
+                    document.getElementById("kibanaContainer").style.display = "block";
+                }
+            } catch (error) {
+                console.error("Error fetching indices:", error);
+            }
 
-        // Fetch all indices when the page loads
-        try {
-            const response = await fetch("/list_indices");
-            const data = await response.json();
-            indices = data.indices || [];
-        } catch (error) {
-            console.error("Error fetching indices:", error);
-        }
+            // Debounced function to display the indices list
+            let debounceTimeout;
+            const displayList = (filter = "") => {
+                autocompleteList.innerHTML = ""; // Clear previous suggestions
 
-        // Function to display the autocomplete list
-        const displayList = (filter = "") => {
-            autocompleteList.innerHTML = ""; // Clear previous suggestions
+                const matches = indices.filter(index => index.toLowerCase().includes(filter.toLowerCase()));
+                const limit = 10; // Limit the number of suggestions displayed
+                const visibleMatches = matches.slice(0, limit); // Show only the first 10 matches
 
-            const matches = indices.filter(index => index.toLowerCase().includes(filter.toLowerCase()));
-            if (matches.length > 0) {
-                matches.forEach(match => {
-                    const listItem = document.createElement("li");
-                    listItem.textContent = match;
-                    listItem.style.padding = "5px";
-                    listItem.style.cursor = "pointer";
+                if (visibleMatches.length > 0) {
+                    visibleMatches.forEach(match => {
+                        const listItem = document.createElement("li");
+                        listItem.textContent = match;
+                        listItem.style.padding = "5px";
+                        listItem.style.cursor = "pointer";
 
-                    listItem.addEventListener("click", () => {
-                        indexInput.value = match;
-                        autocompleteList.style.display = "none";
+                        listItem.addEventListener("click", () => {
+                            indexInput.value = match;
+                            autocompleteList.style.display = "none";
+                        });
+
+                        autocompleteList.appendChild(listItem);
                     });
+                    autocompleteList.style.display = "block";
+                } else {
+                    autocompleteList.style.display = "none";
+                }
+            };
 
-                    autocompleteList.appendChild(listItem);
-                });
-                autocompleteList.style.display = "block";
-            } else {
-                autocompleteList.style.display = "none";
-            }
-        };
+            // Show all indices when the input is clicked
+            indexInput.addEventListener("click", () => {
+                displayList();
+            });
 
-        // Show all indices when the input is clicked
-        indexInput.addEventListener("click", () => {
-            displayList();
+            // Filter indices as the user types with debounce
+            indexInput.addEventListener("input", () => {
+                clearTimeout(debounceTimeout);
+                const query = indexInput.value;
+                debounceTimeout = setTimeout(() => {
+                    displayList(query);
+                }, 300); // Delay the search by 300ms after the user stops typing
+            });
+
+            // Hide autocomplete list when clicking outside
+            document.addEventListener("click", (event) => {
+                if (!autocompleteList.contains(event.target) && event.target !== indexInput) {
+                    autocompleteList.style.display = "none";
+                }
+            });
         });
-
-        // Filter indices as the user types
-        indexInput.addEventListener("input", () => {
-            const query = indexInput.value;
-            displayList(query);
-        });
-
-        // Hide autocomplete list when clicking outside
-        document.addEventListener("click", (event) => {
-            if (!autocompleteList.contains(event.target) && event.target !== indexInput) {
-                autocompleteList.style.display = "none";
-            }
-        });
-    });
     </script>
 </body>
 </html>

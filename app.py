@@ -126,6 +126,13 @@ def list_indices():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/kibana')
+def kibana():
+    return '''
+    <iframe src="http://localhost:5601/app/discover" 
+            style="width: 100%; height: 90vh; border: none;"></iframe>
+    '''
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
