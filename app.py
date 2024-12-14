@@ -1,3 +1,4 @@
+import pdb
 import re
 from flask import Flask, render_template, request, jsonify
 import os
@@ -9,19 +10,14 @@ import os
 app = Flask(__name__,template_folder='app/templates')
 UPLOAD_FOLDER = 'uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
-log_line_pattern = re.compile(r'(\w+)=([^,]+)')
+log_line_pattern = re.compile(r'(\w+): ([^,]+)')
 
 # Add UPLOAD_FOLDER to app configuration
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 # Configuration Elasticsearch
 ELASTICSEARCH_HOST = "http://localhost:9200"  
 INDEX_NAME = "logs"
-es = Elasticsearch(
-    hosts=["http://localhost:9200"],
-    timeout=60,
-    max_retries=10,
-    retry_on_timeout=True
-)
+es = Elasticsearch(hosts=["http://elasticsearch:9200"],timeout=60,max_retries=10,retry_on_timeout=True)
 
 
 
@@ -58,14 +54,11 @@ def process_log(filepath,table_name):
                 matches = log_line_pattern.findall(line)
                 if matches:
                     log_entry = {key.strip(): value.strip() for key, value in matches}
-                    response = es.index(
-                        index=table_name,
-                        id=log_entry.get("TransactionID", line_number),  # Utiliser TransactionID comme ID ou line_number
-                        body=log_entry
-                    )
-                    return True
+                    response = es.index(index=table_name, id=log_entry.get("TransactionID", line_number), document=log_entry)
+
                 else:
                    raise Exception(f"Ligne non valide au numéro {line_number}: {line.strip()}")
+            return True
     except Exception as e:
        raise Exception(f"Erreur lors du traitement du fichier LOG: {e}")
 
@@ -73,10 +66,6 @@ def process_log(filepath,table_name):
 @app.route('/')
 def index():
     return render_template('index.html')
-
-@app.route('/view_log.html')
-def logs_page():
-    return app.send_static_file('view_log.html')
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
@@ -96,21 +85,6 @@ def upload_file():
     file.save(filepath)
     
     try:
-        # with open(filepath, 'r') as f:
-            # for line_number, line in enumerate(f, start=1):
-            #     response = es.index(index=INDEX_NAME, body={
-            #     "line_number": line_number,
-            #     "content": line.strip(),
-            #     "filename": filename
-            #     })
-            #     if response.get('result') != 'created':
-            #     response = es.index(
-            #     index="Transaction",
-            #     id=12345,
-            #     body= {"time":"2024-12-12 18:56:52", "TransactionID": 12345, "Montant": "1131.49", "Devise": "TND", "Utilisateur": "user090", "Type": "Virement", "Statut": "Échoué"}
-
-            # )
-                    # raise Exception(f"Failed to index line {line_number}")
         result =process_file(filepath,filename)
         if not result:
             jsonify({"error":True,"message":"Erreur lors de l'indexation du file"}),406
@@ -119,7 +93,7 @@ def upload_file():
 
     return jsonify({"message": "File uploaded and indexed successfully", "filename": filename})
 
-@app.route('/search_index', methods=['GET'])
+@app.route('/search', methods=['GET'])
 def search_index():
     index_name = request.args.get('index')
     if not index_name:
@@ -138,14 +112,20 @@ def search_index():
         return jsonify(response['hits'])
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
+@app.route('/list_indices', methods=['GET'])
+def list_indices():
+    try:
+        # Appeler l'API _cat/indices pour récupérer les index
+        indices = es.cat.indices(format='json')
+        
+        # Extraire seulement les noms d'index
+        index_names = [index['index'] for index in indices]
+        
+        return jsonify({"indices": index_names}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
-
-@app.route('/kibana')
-def kibana():
-    return '''
-    <iframe src="http://localhost:5601/app/discover" 
-            style="width: 100%; height: 90vh; border: none;"></iframe>
-    '''
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)

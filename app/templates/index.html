@@ -24,7 +24,6 @@
         }
         main {
             margin: 20px auto;
-            max-width: 600px;
             padding: 20px;
             background-color: white;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -60,7 +59,19 @@
         button:hover {
             background-color: #005bb5;
         }
-        /* Popup styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
         #popup {
             display: none;
             position: fixed;
@@ -99,19 +110,22 @@
             <input type="file" name="logfile" />
             <button type="submit">Upload</button>
         </form>
-        <h2>Search Logs</h2>
-        <form id="searchForm" action="/view_log.html" method="get">
-            <input type="text" name="index" placeholder="Enter your search table" />
+        <form id="searchForm">
+            <input 
+                type="text" 
+                id="indexInput" 
+                name="index" 
+                placeholder="Enter your search table" 
+                autocomplete="off" />
+            <ul id="autocompleteList" style="list-style: none; padding: 0; margin: 0; border: 1px solid #ccc; max-height: 150px; overflow-y: auto; display: none; background: white; position: absolute; z-index: 100;"></ul>
             <button type="submit">Search</button>
-        </form> 
-        <h2>View Logs in Kibana</h2>
-        <button onclick="openKibana()">Open Kibana Dashboard</button>
-        <div id="kibanaIframe">
-            <iframe src="http://localhost:5601/app/discover" 
-                    style="width: 100%; height: 90vh; border: none;"></iframe>
-        </div>       
+        </form>
+        <h2>Log Results</h2>
+        <table id="logTable">
+            <thead id="tableHeaders"></thead>
+            <tbody id="tableBody"></tbody>
+        </table>
     </main>
-    <!-- Popup -->
     <div id="overlay"></div>
     <div id="popup">
         <p id="popupMessage"></p>
@@ -141,11 +155,48 @@
             try {
                 const response = await fetch(`/search?${query}`);
                 const result = await response.json();
-                showPopup(result.message || "Search completed.");
+                populateTable(result.hits);
+                showPopup("Search completed.");
             } catch (error) {
                 showPopup("An error occurred while searching.");
             }
         });
+
+        // Populate the table with log results
+        function populateTable(hits) {
+            const tableHeaders = document.getElementById("tableHeaders");
+            const tableBody = document.getElementById("tableBody");
+
+            // Clear existing table content
+            tableHeaders.innerHTML = "";
+            tableBody.innerHTML = "";
+
+            if (hits.length === 0) {
+                showPopup("No logs found.");
+                return;
+            }
+
+            // Create table headers
+            const keys = Object.keys(hits[0]._source);
+            const headerRow = document.createElement("tr");
+            keys.forEach(key => {
+                const th = document.createElement("th");
+                th.textContent = key;
+                headerRow.appendChild(th);
+            });
+            tableHeaders.appendChild(headerRow);
+
+            // Create table rows
+            hits.forEach(hit => {
+                const row = document.createElement("tr");
+                keys.forEach(key => {
+                    const td = document.createElement("td");
+                    td.textContent = hit._source[key] || "-";
+                    row.appendChild(td);
+                });
+                tableBody.appendChild(row);
+            });
+        }
 
         // Show popup with a message
         function showPopup(message) {
@@ -159,10 +210,66 @@
             document.getElementById("popup").style.display = "none";
             document.getElementById("overlay").style.display = "none";
         }
-        // Function to show Kibana iframe
-        function openKibana() {
-            document.getElementById("kibanaIframe").style.display = "block";
+        
+
+        
+        document.addEventListener("DOMContentLoaded", async () => {
+        const indexInput = document.getElementById("indexInput");
+        const autocompleteList = document.getElementById("autocompleteList");
+        let indices = [];
+
+        // Fetch all indices when the page loads
+        try {
+            const response = await fetch("/list_indices");
+            const data = await response.json();
+            indices = data.indices || [];
+        } catch (error) {
+            console.error("Error fetching indices:", error);
         }
+
+        // Function to display the autocomplete list
+        const displayList = (filter = "") => {
+            autocompleteList.innerHTML = ""; // Clear previous suggestions
+
+            const matches = indices.filter(index => index.toLowerCase().includes(filter.toLowerCase()));
+            if (matches.length > 0) {
+                matches.forEach(match => {
+                    const listItem = document.createElement("li");
+                    listItem.textContent = match;
+                    listItem.style.padding = "5px";
+                    listItem.style.cursor = "pointer";
+
+                    listItem.addEventListener("click", () => {
+                        indexInput.value = match;
+                        autocompleteList.style.display = "none";
+                    });
+
+                    autocompleteList.appendChild(listItem);
+                });
+                autocompleteList.style.display = "block";
+            } else {
+                autocompleteList.style.display = "none";
+            }
+        };
+
+        // Show all indices when the input is clicked
+        indexInput.addEventListener("click", () => {
+            displayList();
+        });
+
+        // Filter indices as the user types
+        indexInput.addEventListener("input", () => {
+            const query = indexInput.value;
+            displayList(query);
+        });
+
+        // Hide autocomplete list when clicking outside
+        document.addEventListener("click", (event) => {
+            if (!autocompleteList.contains(event.target) && event.target !== indexInput) {
+                autocompleteList.style.display = "none";
+            }
+        });
+    });
     </script>
 </body>
 </html>
